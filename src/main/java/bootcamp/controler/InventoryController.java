@@ -10,19 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import bootcamp.model.Equipment;
+import bootcamp.service.InventoryService;
+
 @RestController
 public class InventoryController {
 
 	@Autowired
-	JdbcTemplate jdbctemplate;
+	private InventoryService inventoryService;
 
-	@GetMapping ("/test")
-	public String getStuff() {
-		
-		Object stuff = jdbctemplate.queryForRowSet("select * from equipment");
-		
-		return stuff.toString();
-		
+	@RequestMapping ("/equipment")
+	public Equipment getEquipment() {
+		Equipment equipment = inventoryService.getEquipment();
+		return equipment;
 	}
-	
 }

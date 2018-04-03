@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 import bootcamp.model.Equipment;
 
 @Component
-public class InventroyDao {
+public class InventoryDao {
  @Autowired
  private JdbcTemplate jdbcTemplate;
  
- private final String SQL = "SELECT personid, lastname, firstname, address, city FROM public.branden where personid = 1";
+ private final String SQL = "SELECT * FROM equipment";
  public Equipment getEquipmentById() {
  List<Equipment> p = jdbcTemplate.query(SQL, new BeanPropertyRowMapper<>(Equipment.class));
  return p.get(0);
