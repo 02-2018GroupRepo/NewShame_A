@@ -8,7 +8,13 @@ public class Equipment {
 	private double price;
 	private String location; 
 	
-	
+//	public Equipment(int skuNumber,String  equipmentType, int equipmentId, double price, String location) {
+//		this.skuNumber = skuNumber;
+//		this.equipmentType= equipmentType;
+//		this.equipmentId = equipmentId;
+//		this.price = price;
+//		this.location = location;
+//	}
 	public int getSkuNumber() {
 		return skuNumber;
 	}
