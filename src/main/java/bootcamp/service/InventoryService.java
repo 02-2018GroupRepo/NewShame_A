@@ -19,13 +19,17 @@ public class InventoryService {
 		
 	}
 	
-	public void setEquipment(Equipment equipment){
-		iDao.setEquipment(equipment);
+	public int setEquipment(Equipment equipment){
+		return iDao.setEquipment(equipment);
 	}
 
-	public void updateEquipment(String updateLocation, int equipId) {
-		iDao.updateEquipment(updateLocation, equipId);
+	public int updateEquipment(String updateLocation, int equipId) {
+		return iDao.updateEquipment(updateLocation, equipId);
 		
+	}
+
+	public int deleteEquipment(int id) {
+		return iDao.deleteEquipment(id);
 	}
 	
 

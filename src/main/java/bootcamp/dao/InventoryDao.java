@@ -17,9 +17,10 @@ public class InventoryDao {
 	private final String SqlInsert = "insert into equipment values(?,?,?,?,?)";
 	private final String SqlSelect = "select * from equipment;";
 	private final String SqlUpdate = "Update equipment set location =? where equipmentid = ?";
+	private final String SqlDelete = "Delete From equipment where equipmentId = ";
 
-	public void setEquipment(Equipment equipment) {
-		jdbcTemplate.update(SqlInsert, 
+	public int setEquipment(Equipment equipment) {
+		return jdbcTemplate.update(SqlInsert, 
 							equipment.getSkuNumber(),
 							equipment.getEquipmentId(), 
 							equipment.getPrice(), 
@@ -34,8 +35,14 @@ public class InventoryDao {
 	}
 
 
-	public void updateEquipment(String updateLocation, int equipId) {
-		jdbcTemplate.update(SqlUpdate, updateLocation, equipId);
+	public int updateEquipment(String updateLocation, int equipId) {
+		return jdbcTemplate.update(SqlUpdate, updateLocation, equipId);
+		
+	}
+
+
+	public int deleteEquipment(int id) {
+		return jdbcTemplate.update(SqlDelete + id);
 		
 	}
 }

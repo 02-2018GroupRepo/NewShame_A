@@ -3,18 +3,21 @@ package bootcamp.model;
 public class Equipment {
 
 	private int skuNumber;
-	private String equipmentType;
 	private int equipmentId;
 	private double price;
 	private String location; 
+	private String equipmentType;
 	
-//	public Equipment(int skuNumber,String  equipmentType, int equipmentId, double price, String location) {
-//		this.skuNumber = skuNumber;
-//		this.equipmentType= equipmentType;
-//		this.equipmentId = equipmentId;
-//		this.price = price;
-//		this.location = location;
-//	}
+	public Equipment() {}
+	
+	public Equipment(int skuNumber, int equipmentId, double price, String location, String  equipmentType) {
+		this.skuNumber = skuNumber;
+		this.equipmentType= equipmentType;
+		this.equipmentId = equipmentId;
+		this.price = price;
+		this.location = location;
+	}
+	
 	public int getSkuNumber() {
 		return skuNumber;
 	}

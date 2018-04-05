@@ -30,14 +30,19 @@ public class InventoryController {
 	}
 	
 	@RequestMapping(name="/insertequipment", method = RequestMethod.POST)
-	public void setEquipment(@RequestBody Equipment equipment){
+	public int setEquipment(@RequestBody Equipment equipment){
 		
-		inventoryService.setEquipment(equipment);
+		return inventoryService.setEquipment(equipment);
 	}
 	
 	@RequestMapping ("/updateequipment")
-	public void updateEquipment(@RequestParam (value= "location")String updateLocation, @RequestParam (value= "id") int equipId) {
-	inventoryService.updateEquipment(updateLocation, equipId);
+	public int updateEquipment(@RequestParam (value= "location")String updateLocation, @RequestParam (value= "id") int equipId) {
+	return inventoryService.updateEquipment(updateLocation, equipId);
+	}
+	
+	@RequestMapping("/deleteequipment")
+	public int deleteEquipment(@RequestParam int id) {
+		return inventoryService.deleteEquipment(id);
 	}
 	
 }
